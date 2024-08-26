@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="aaa" />
+    <button id="btn"> 클릭</button>
+    <div id="bbb"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn').on("click", function () {
+                const vv = $('#aaa').val();
+                //alert(vv);
+                const div = $('#bbb');
+                const div2 = $('<div></div>');
+                const p = $('<p></p>');
+                const button = $('<button>삭제</button>');
+                button.on("click", function () {
+                    div2.remove();
+                });
+                p.text(vv);
+                $('#aaa').val('');
+                div2.append(p);
+                div2.append(button);
+                div.append(div2);
+            });
+        });
+    </script>
+</body>
+
+</html>
